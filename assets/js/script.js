@@ -24,5 +24,8 @@ button.addEventListener(`click`, function (e) {
     priceTicket = priceTicket * (1 - 0.40)
   }
 
-  console.log(name, parseFloat(priceTicket.toFixed(2)), age)
+  document.getElementById(`show-name`).innerText = name
+  document.getElementById(`show-age`).innerText = age
+  document.getElementById(`show-price`).innerText = parseFloat(priceTicket.toFixed(2)) + `€`
+
 })

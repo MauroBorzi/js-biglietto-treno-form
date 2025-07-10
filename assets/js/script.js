@@ -1,21 +1,3 @@
-// // definizione variabili
-// let priceTicket = km * 0.21
-
-// // sconto minorenni
-// if (age < 18) {
-//   priceTicket = priceTicket * (1 - 0.20)
-// }
-
-// // sconto over 65
-// if (age > 65) {
-//   priceTicket = priceTicket * (1 - 0.40)
-// }
-
-// console.log(parseFloat(priceTicket.toFixed(2)))
-
-
-
-
 // recupero il pulsante per inviare i dati della form
 
 const button = document.getElementById(`send`)
@@ -31,5 +13,16 @@ button.addEventListener(`click`, function (e) {
   const kilo = document.getElementById(`kilo`).value
   const age = document.getElementById(`age`).value
 
-  console.log(name, kilo, age)
+  // definizione variabili
+  let priceTicket = kilo * 0.21
+
+  // sconto under e over
+  if (age === "Biglietto Under") {
+    priceTicket = priceTicket * (1 - 0.20)
+  }
+  else if (age === "Biglietto Over") {
+    priceTicket = priceTicket * (1 - 0.40)
+  }
+
+  console.log(name, parseFloat(priceTicket.toFixed(2)), age)
 })

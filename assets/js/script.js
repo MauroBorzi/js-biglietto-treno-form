@@ -1,8 +1,16 @@
-// recupero il pulsante per inviare i dati della form
+// recupero il pulsanti
 
 const button = document.getElementById(`send`)
+const reset = document.getElementById(`reset`)
 
 // creo l'evento click sul pulsante
+
+reset.addEventListener(`click`, function (e) {
+  e.preventDefault()
+
+  window.location.reload()
+
+})
 
 button.addEventListener(`click`, function (e) {
   e.preventDefault()
@@ -25,6 +33,7 @@ button.addEventListener(`click`, function (e) {
   }
 
   document.getElementById(`show-name`).innerText = name
+  document.getElementById(`show-kilo`).innerText = kilo + `Km`
   document.getElementById(`show-age`).innerText = age
   document.getElementById(`show-price`).innerText = parseFloat(priceTicket.toFixed(2)) + `€`
 
